@@ -1,0 +1,117 @@
+@function gap($size: "normal") {
+	@if $size=="large" {
+		@return 20px;
+	}
+
+	@else if $size=="small" {
+		@return 5px;
+	}
+
+	@else {
+		@return 15px;
+	}
+}
+
+/// Adds a browser prefix to the property
+/// @param {*} $property Property
+/// @param {*} $value Value
+
+@mixin css3-prefix($property, $value) {
+	-webkit-#{$property}: #{$value};
+	-khtml-#{$property}: #{$value};
+	-moz-#{$property}: #{$value};
+	-ms-#{$property}: #{$value};
+	-o-#{$property}: #{$value};
+	#{$property}: #{$value};
+}
+
+/// Border Radius
+/// @param {Size} $radius [5px] - Radius
+/// @require {mixin} css3-prefix
+
+@mixin border-radius($radius: "normal") {
+	@if $radius=="small" {
+		@include css3-prefix('border-radius', 3px);
+	}
+
+	@else if $radius=="large" {
+		@include css3-prefix('border-radius', 13px);
+	}
+
+	@else {
+		@include css3-prefix('border-radius', 5px);
+	}
+}
+
+@mixin no-select() {
+	@include css3-prefix('user-select', none);
+	-webkit-touch-callout: none;
+}
+@mixin no-drag() {
+	@include css3-prefix('user-drag', none);
+}
+
+/**
+ * Add border property.
+ */
+@mixin border($position: "all", $color: $border-color, $width: 1px) {
+	@if $position=="top" {
+		border-top: $width solid $color;
+	}
+
+	@else if $position=="right" {
+		border-right: $width solid $color;
+	}
+
+	@else if $position=="bottom" {
+		border-bottom: $width solid $color;
+	}
+
+	@else if $position=="left" {
+		border-left: $width solid $color;
+	}
+
+	@else {
+		border: $width solid $color;
+	}
+}
+
+
+/// Box Shadow
+/// @param {Size} $x [2px] - X
+/// @param {Size} $y [2px] - Y
+/// @param {Size} $blur [5px] - Blur
+/// @param {Color} $color [rgba(0,0,0,.4)] - Color
+/// @param {Boolean} $inset - Inset
+
+@mixin box-shadow($x: 0, $y: 0, $blur: 5px, $color: rgba(0, 0, 0, .15), $spread: 1px, $inset: "") {
+	@if ($inset !="") {
+		@include css3-prefix('box-shadow', $inset $x $y $blur $spread $color);
+	}
+
+	@else {
+		@include css3-prefix('box-shadow', $x $y $blur $spread $color);
+	}
+}
+
+@mixin padding($size: gap(), $position: 'all') {
+	@if $position=="top" {
+		padding-top: $size;
+	}
+
+	@else if $position=="right" {
+		padding-right: $size;
+	}
+
+	@else if $position=="bottom" {
+		padding-bottom: $size;
+	}
+
+	@else if $position=="left" {
+		padding-left: $size;
+	}
+
+	@else {
+		padding: $size;
+	}
+}

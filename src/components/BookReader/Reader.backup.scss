@@ -1,0 +1,63 @@
+@import '../../themes/variables.scss';
+@import '../../themes/mixins.scss';
+
+.m-reader {
+
+	&-wrapper {
+		height: 100%;
+
+		>.c-flexing-item {
+			height: 100%;
+		}
+	}
+
+	&-menu {
+		@include border('right');
+		height: 100%;
+		box-sizing: border-box;
+		// overflow: auto;
+
+		&-cover {
+			position: absolute;
+			top: 0; left: 0; right: 0;
+			height: 100%;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: top center;
+		}
+
+		&-inner {
+			height: 100%;
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: column;
+			position: relative;
+			z-index: 1;
+		}
+
+		&-shrink {
+			flex-shrink: 1;
+		}
+		&-grow {
+			overflow: overlay;
+		}
+	}
+	&-menu-item {
+		@include padding(gap());
+	}
+
+	&-content {
+		height: 100%;
+	}
+	&-menu-item {
+		&.chapter-list {
+			padding-top: 0;
+
+			.chapter {
+				&.active {
+					background: #ddd;
+				}
+			}
+		}
+	}
+}

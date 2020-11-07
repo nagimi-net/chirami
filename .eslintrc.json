@@ -1,0 +1,43 @@
+{
+	"root": true,
+	"parser": "@typescript-eslint/parser",
+	"plugins": [
+		"@typescript-eslint"
+	],
+	"env": {
+		"node": true
+	},
+	"extends": [
+
+		//"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:react/recommended"
+	],
+	"rules": {
+		"@typescript-eslint/ban-ts-comment": "off",
+		"@typescript-eslint/no-explicit-any": "off",
+		"@typescript-eslint/no-non-null-assertion": "off",
+		"@typescript-eslint/no-empty-interface": "off",
+		"quotes": [
+			"error",
+			"single"
+		],
+		"react/prop-types": "off" // In favor of strong typing - no need to dedupe
+	},
+	"settings": {
+		"react": {
+			"createClass": "createReactClass", // Regex for Component Factory to use,
+			// default to "createReactClass"
+			"pragma": "React", // Pragma to use, default to "React"
+			"version": "detect" // React version. "detect" automatically picks the version you have installed.
+		},
+		"linkComponents": [
+			// Components used as alternatives to <a> for linking, eg. <Link to={ url } />
+			"Hyperlink",
+			{
+				"name": "Link",
+				"linkAttribute": "to"
+			}
+		]
+	}
+}

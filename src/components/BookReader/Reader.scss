@@ -1,0 +1,182 @@
+@import '../../themes/variables.scss';
+@import '../../themes/mixins.scss';
+
+#book-reader {
+	// $base-color: #f00;
+
+	// @for $i from 1 through 10 {
+	// 	.bg-#{$i} {
+	// 		background-color: adjust-hue($base-color, $i * 10%);
+	// 		min-height: 10px;
+	// 	}
+	// }
+
+	background-color: #464646;
+	position: relative;
+	overflow: hidden;
+
+	.c-card {
+		position: relative;
+
+		&:before, &:after {
+			content: '';
+			position: absolute;
+			top: 0; bottom: 0;
+			width: gap('small');
+		}
+
+		&:before {left: 0;}
+		&:after {right: 0;}
+
+		&.active:after {
+			background-color: $background-color-accent;
+		}
+	}
+
+	.book-reader-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		&.blur {
+			margin: -30px;
+			filter: blur(30px);
+			//margin: -15px;
+		}
+	}
+
+	.book-element {
+		height: 100%;
+		flex-basis: 0;
+
+		position: relative;
+		z-index: 1;
+	}
+
+	.reader-menu {
+		.menu-wrapper {
+			height: 100%;
+			box-sizing: border-box;
+			border-color: #fff;
+
+			.menu-element {
+				box-sizing: border-box;
+			}
+		}
+
+		.menu-wrapper {
+			.menu-header {
+				height: 100px;
+				background: #fff;
+			}
+		}
+
+		.menu-wrapper {
+			.chapters {
+				.chapter-item {
+					.label {}
+					.date {
+						font-size: .7em;
+					}
+				}
+			}
+		}
+	}
+
+
+	#reader-menu {
+		flex-basis: auto;
+		position: relative;
+		overflow: hidden;
+
+		.reader-menu-chapter {
+			width: 230px;
+		}
+		.reader-menu-page {
+			width: 150px;
+		}
+	}
+
+
+
+	.book-pages {
+		.book-page-inner {
+			background: #ffffffa1;
+		}
+
+		.book-page-label {
+			display: inline-block;
+		}
+	}
+
+	#reader-content {
+
+	}
+
+	.book-detail {
+		.book-detail-cover, .book-detail-desc {
+			border-radius: $border-radius-normal;
+			height: 500px;
+		}
+		.book-detail-cover {
+			background-color: #464646;
+
+			.cover-image {
+				width: 350px;
+				border-radius: $border-radius-normal;
+				//background-size: contain;
+			}
+		}
+		.book-detail-desc {
+			background-color: #fff;
+			margin-left: gap();
+			padding: gap();
+			overflow: auto;
+
+			.book-detail-item {
+				&:not(:last-child) {
+					margin-bottom: gap();
+				}
+				span {
+					display: inline-block;
+				}
+
+				span.label {
+					font-weight: bold;
+				}
+			}
+		}
+
+		.book-detail-desc {
+			.detail-title {
+				font-size: 2em;
+			}
+			.detail-author {
+			}
+			.detail-genre {
+				a {
+					display: inline-block;
+					&:not(:last-child) {
+						margin-right: gap('small');
+						margin-bottom: gap('small');
+					}
+
+					padding: gap('small');
+					background: #ddd;
+					border-radius: $border-radius-small;
+				}
+			}
+			.detail-description {
+			}
+			.detail-relased {
+			}
+			.detail-status {
+			}
+			.detail-title-alt {
+			}
+		}
+	}
+
+}

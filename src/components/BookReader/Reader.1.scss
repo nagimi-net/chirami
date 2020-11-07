@@ -1,0 +1,119 @@
+// @import '../../themes/variables.scss';
+// @import '../../themes/mixins.scss';
+
+// #book-reader {
+// 	// $base-color: #f00;
+
+// 	// @for $i from 1 through 10 {
+// 	// 	.bg-#{$i} {
+// 	// 		background-color: adjust-hue($base-color, $i * 10%);
+// 	// 		min-height: 10px;
+// 	// 	}
+// 	// }
+
+// 	background-color: #464646;
+
+// 	.book-element {
+// 		height: 100%;
+// 		flex-basis: 0;
+// 	}
+
+// 	.reader-menu {
+// 		.menu-cover {
+// 			position: absolute;
+// 			top: 0;
+// 			left: 0;
+// 			right: 0;
+// 			height: 100%;
+// 			background-size: cover;
+// 			background-repeat: no-repeat;
+// 			background-position: top center;
+
+// 			margin: -15px;
+
+// 			&.blur {
+// 				filter: blur(15px);
+// 				//margin: -15px;
+// 			}
+// 		}
+
+// 		.menu-wrapper {
+// 			height: 100%;
+// 			box-sizing: border-box;
+// 			position: relative;
+// 			z-index: 1;
+
+// 			.menu-element {
+// 				box-sizing: border-box;
+// 			}
+// 		}
+
+// 		.menu-wrapper {
+// 			.menu-header {
+// 				height: 100px;
+// 			}
+// 		}
+
+// 		.menu-wrapper {
+// 			.chapters {
+// 				.chapter-item {
+// 					&.active {
+// 						@include border();
+// 					}
+
+// 					.label {}
+// 					.date {
+// 						font-size: .7em;
+// 					}
+// 				}
+// 			}
+// 		}
+
+
+
+// 	}
+
+
+// 	#reader-menu {
+// 		width: 200px;
+// 		flex-basis: 200px;
+// 		position: relative;
+// 		overflow: hidden;
+
+
+// 	}
+
+
+
+// 	#reader-page {
+// 		background: #bdbdbd;
+
+// 		.book-pages {
+// 			width: 150px;
+// 			flex-basis: 150px;
+
+// 			.book-page-item {
+// 				background-size: cover;
+// 				background-repeat: no-repeat;
+// 				background-position: center;
+
+// 				&.active {
+// 					@include border();
+// 				}
+// 			}
+
+// 			.book-page-inner {
+// 				background-color: #ffffffd4;
+// 			}
+
+// 			.book-page-label {
+// 				display: inline-block;
+// 			}
+// 		}
+// 	}
+
+// 	#reader-content {
+
+// 	}
+
+// }

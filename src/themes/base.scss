@@ -1,0 +1,57 @@
+html, body {
+	font-family: $font-family;
+	height: 100%;
+}
+
+//#region heading
+h1, h2, h3, h4, h5, h6 {}
+h1 {
+
+}
+h2 {
+
+}
+h3 {
+
+}
+h4 {
+
+}
+h5 {
+
+}
+h6 {
+
+}
+//#endregion
+
+
+// width
+::-webkit-scrollbar {
+	width: 5px;
+	&-track {
+		background: transparent;
+	}
+	&-thumb {
+		background: lighten($background-color-accent, 5%);
+
+		&:hover {
+			background: $background-color-accent;
+		}
+	}
+}
+
+.border {
+	&-top {
+		@include border('top');
+	}
+	&-left {
+		@include border('left');
+	}
+	&-right {
+		@include border('right');
+	}
+	&-bottom {
+		@include border('bottom');
+	}
+}

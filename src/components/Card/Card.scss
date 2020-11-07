@@ -1,0 +1,26 @@
+.c-card {
+	//@include border();
+	@include border-radius();
+	@include box-shadow();
+	background: $background-color;
+	overflow: hidden;
+
+	&-header {
+		padding: gap();
+		@include border("bottom");
+	}
+
+	&-body {
+		padding: gap();
+	}
+
+	&-footer {
+		padding: gap();
+		@include border("top");
+	}
+
+	&-loading {}
+
+	&.is-loading {}
+
+}

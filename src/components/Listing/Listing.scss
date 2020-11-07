@@ -1,0 +1,14 @@
+.c-listing {
+	overflow: hidden;
+}
+.c-listing-scroll {
+	height: 100%;
+	overflow-y: overlay;
+	overflow-x: hidden;
+	padding-right: gap('small');
+	padding-left: gap('small');
+}
+
+    // height: 100%;
+    // overflow-y: overlay;
+    // overflow-x: hidden;
