@@ -1,0 +1,16 @@
+@import '../../themes/variables.scss';
+@import '../../themes/mixins.scss';
+
+.m-source {
+	.source-item {
+
+	}
+
+	.source-inner {
+		height: 100px;
+	}
+
+	.source-logo {
+		max-width: 150px;
+	}
+}

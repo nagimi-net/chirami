@@ -1,1 +1,6 @@
-# chirami
+# Chirami
+
+## first start
+```
+npm start
+```

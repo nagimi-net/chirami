@@ -1,0 +1,50 @@
+@import './bootstrap/bootstrap-grid.scss';
+
+@import './resets.scss';
+@import './variables.scss';
+@import './mixins.scss';
+@import './base.scss';
+
+
+
+@import './components.scss';
+
+
+#root {
+	* {
+		@include no-select();
+		@include no-drag();
+	}
+
+	height: 100%;
+}
+
+.noselect {
+	@include no-select();
+}
+.nodrag {
+	@include no-drag();
+}
+
+.flex-full {
+	width: 100%;
+	height: 100%;
+
+	&-v {
+		width: 100%;
+	}
+	&-h {
+		height: 100%;
+	}
+}
+
+.image-bg {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+a.button, a[href='javascript:void(0)'] {
+	color: initial;
+	text-decoration: initial;
+}

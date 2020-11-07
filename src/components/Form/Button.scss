@@ -1,0 +1,16 @@
+.c-form-button {
+	// @include border();
+	border: 0;
+	@include border-radius();
+	@include padding(gap());
+	outline: 0;
+
+	background-color: $background-color-accent;
+
+	&:hover {
+		background-color: lighten($background-color-accent, 2%);
+	}
+	&:focus{
+		background-color: darken($background-color-accent, 2%);
+	}
+}
