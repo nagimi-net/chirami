@@ -33,25 +33,16 @@ export interface BookCover {
 
 }
 
-export declare class Source {
-	public __options?: SourceOptions;
-
-	public getUpdates(): Promise<Pamflet[]>;
-	public directory(): Promise<BookCover[]>;
-	public search(): Promise<BookCover[]>;
-
-	public getBook(bookIndex: string): Promise<Book>;
-	public getChapter(bookIndex: string, chapterIndex: string): Promise<BookPage[]>;
-}
-
 type Window = {
-	source: { LIST: SourceOptions[] };
+	source: {
+		LIST: SourceOptions[],
+		log: string[]
+	};
 }
 
 export class SourceManager {
-	public static __context: string;
-
-	public static LIST: SourceOptions[] = (window as unknown as Window).source.LIST;
+	public static LIST = (window as unknown as Window).source.LIST;
+	public static LOG = (window as unknown as Window).source.log;
 
 	public static getUpdates(sourceIndex: string): Promise<Pamflet[]> {
 		return (window as any).source.api.getUpdates(sourceIndex);
