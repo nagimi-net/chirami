@@ -96,3 +96,4 @@ dist/win-unpacked/resources/app.asar
 dist/win-unpacked/resources/elevate.exe
 dist/win-unpacked/swiftshader/libEGL.dll
 dist/win-unpacked/swiftshader/libGLESv2.dll
+.env
