@@ -1,0 +1,14 @@
+.c-logger {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	code {
+		white-space: pre-wrap;
+		background: #c900009e;
+		color: #fff;
+		display: block;
+		margin: 1px;
+	}
+}

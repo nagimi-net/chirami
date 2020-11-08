@@ -96,3 +96,15 @@ dist/win-unpacked/resources/app.asar
 dist/win-unpacked/resources/elevate.exe
 dist/win-unpacked/swiftshader/libEGL.dll
 dist/win-unpacked/swiftshader/libGLESv2.dll
+.env
+dist/chirami/sources/dev.mangadex.js
+dist/chirami/sources/dev.mangakakalot.js
+dist/chirami/sources/example.js
+dist/chirami/sources/manga4life.js
+dist/chirami/sources.zip
+dist/chiramiv/user-settings.json
+dist/chiramiv2/user-settings.json
+dist/chiramiv2/sources/dev.mangadex.js
+dist/chiramiv2/sources/dev.mangakakalot.js
+dist/chiramiv2/sources/example.js
+dist/chiramiv2/sources/manga4life.js
