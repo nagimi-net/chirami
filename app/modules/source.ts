@@ -1,6 +1,6 @@
 import * as path from 'path';
 import * as fs from 'fs';
-import { BASEDIR } from '../constants';
+import { BASEDIR, defaultFilterOptions } from '../constants';
 
 let SOURCE: any = {};
 let SOURCE_LIST: any[] = [];
@@ -44,7 +44,7 @@ async function exec(sourceId: string, funcName: string, ...args: any) {
 }
 
 const api = {
-	getDirectory: (sourceIndex: string, filterOptions: any) => exec(sourceIndex, 'getDirectory', filterOptions),
+	getDirectory: (sourceIndex: string, filterOptions: any) => exec(sourceIndex, 'getDirectory', { ...defaultFilterOptions, ...filterOptions }),
 	getBook: (sourceIndex: string, bookIndex: string) => exec(sourceIndex, 'getBook', bookIndex),
 	getChapter: (sourceIndex: string, bookIndex: string, chapterIndex: string) => exec(sourceIndex, 'getChapter', bookIndex, chapterIndex),
 }
