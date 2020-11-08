@@ -36,22 +36,6 @@ function init () {
 	catch (e) { }
 }
 
-function save(id: string, data: string) {
-	try {
-		const dir = path.join(BASEDIR, 'sources', id + '.js');
-		if (fs.existsSync(dir)) {
-			fs.unlinkSync(dir);
-		}
-		fs.writeFileSync(dir, data, { encoding: 'utf8' });
-
-		return true;
-	}
-	catch (e) {
-		console.error('error to save source id : ' + id, e);
-		return false;
-	}
-}
-
 async function exec(sourceId: string, funcName: string, ...args: any) {
 	if (!SOURCE[sourceId]) {
 		throw new Error("missing source \"" + sourceId + "\". is source has initialized?");
@@ -60,9 +44,7 @@ async function exec(sourceId: string, funcName: string, ...args: any) {
 }
 
 const api = {
-	getUpdates: (sourceIndex: string) => exec(sourceIndex, 'getUpdates'),
-	getDirectory: (sourceIndex: string) => exec(sourceIndex, 'getDirectory'),
-	search: (sourceIndex: string) => exec(sourceIndex, 'search'),
+	getDirectory: (sourceIndex: string, filterOptions: any) => exec(sourceIndex, 'getDirectory', filterOptions),
 	getBook: (sourceIndex: string, bookIndex: string) => exec(sourceIndex, 'getBook', bookIndex),
 	getChapter: (sourceIndex: string, bookIndex: string, chapterIndex: string) => exec(sourceIndex, 'getChapter', bookIndex, chapterIndex),
 }
@@ -72,8 +54,6 @@ init();
 
 module.exports = {
 	init,
-	save,
-	exec,
 	api,
 	LIST: SOURCE_LIST,
 }
